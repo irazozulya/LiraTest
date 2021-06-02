@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17505" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Photos" representedClassName="Photos" parentEntity="User" syncable="YES">
+        <attribute name="photo" optional="YES" attributeType="Binary"/>
+        <attribute name="photo_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="test_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <userInfo>
+            <entry key="key" value="value"/>
+        </userInfo>
+    </entity>
+    <entity name="Test" representedClassName="Test" syncable="YES">
+        <attribute name="test_id" attributeType="Integer 64" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="questions" toMany="YES" deletionRule="Nullify" destinationEntity="Test_questions"/>
+    </entity>
+    <entity name="Test_answers" representedClassName="Test_answers" syncable="YES">
+        <attribute name="answer" optional="YES" attributeType="String"/>
+        <attribute name="answer_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="question_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Test_questions" representedClassName="Test_questions" syncable="YES">
+        <attribute name="answer_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="question" attributeType="String"/>
+        <attribute name="question_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="test_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="correct_answers" toMany="YES" deletionRule="Nullify" destinationEntity="Test_answers"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="full_name" optional="YES" attributeType="String"/>
+        <attribute name="pass" optional="YES" attributeType="String"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photos"/>
+        <relationship name="tests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User_answers"/>
+    </entity>
+    <entity name="User_answers" representedClassName="User_answers" syncable="YES">
+        <attribute name="answer_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="question_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="test_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="test_check" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Test_questions"/>
+    </entity>
+    <entity name="User_tests" representedClassName="User_tests" syncable="YES"/>
+    <elements>
+        <element name="Photos" positionX="-36" positionY="36" width="128" height="88"/>
+        <element name="Test" positionX="-54" positionY="27" width="128" height="88"/>
+        <element name="Test_answers" positionX="-45" positionY="36" width="128" height="88"/>
+        <element name="Test_questions" positionX="-36" positionY="54" width="128" height="118"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="User_answers" positionX="-27" positionY="63" width="128" height="118"/>
+        <element name="User_tests" positionX="-36" positionY="81" width="128" height="43"/>
+    </elements>
+</model>
