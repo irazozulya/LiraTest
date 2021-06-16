@@ -32,7 +32,7 @@ public class User: NSManagedObject {
           }()
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = User.fetchRequest()
          
-        let predicate = NSPredicate(format: "email == %@", email!, password!)
+        let predicate = NSPredicate(format: "email == %@ and pass== %@", email!, password!)
         fetchRequest.predicate = predicate
         
         do {
@@ -87,6 +87,38 @@ public class User: NSManagedObject {
         do {
             try newUser.managedObjectContext?.save()
             return true
+        } catch {
+            return false
+        }
+    }
+    
+    static func getAllUserTests(email: String?, password: String?) -> Bool {
+        if(email == nil || password == nil) {
+            return false;
+        }
+        
+        let persistentContainer: NSPersistentContainer = {
+              let container = NSPersistentContainer(name: "Model")
+              container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+                  if let error = error as NSError? {
+                      fatalError("Unresolved error \(error), \(error.userInfo)")
+                  }
+              })
+              return container
+          }()
+        
+        let context: NSManagedObjectContext = {
+            return persistentContainer.viewContext
+          }()
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = User.fetchRequest()
+         
+        let predicate = NSPredicate(format: "email == %@ and pass== %@", email!, password!)
+        fetchRequest.predicate = predicate
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            
+            return result.count >= 1
         } catch {
             return false
         }
