@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		312280C226799F73009BC2B6 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312280C126799F73009BC2B6 /* Tests.swift */; };
 		313E3BE226672AAD00FC8FB8 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 313E3BE126672AAC00FC8FB8 /* Preview Content */; };
 		313E3BE526672B3400FC8FB8 /* RegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313E3BE426672B3400FC8FB8 /* RegisterManager.swift */; };
 		313E3BE82667321E00FC8FB8 /* MainPageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313E3BE72667321E00FC8FB8 /* MainPageManager.swift */; };
@@ -32,7 +33,28 @@
 		AFBCAEA0265A5BDC00C866FE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFBCAE9E265A5BDC00C866FE /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		312280A626799641009BC2B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF1EE5702630E17800F4CDDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF1EE5772630E17800F4CDDA;
+			remoteInfo = LiraTech;
+		};
+		312280B6267999D3009BC2B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF1EE5702630E17800F4CDDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF1EE5772630E17800F4CDDA;
+			remoteInfo = LiraTech;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		312280A126799641009BC2B6 /* LiraTechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiraTechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		312280A526799641009BC2B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		312280B1267999D3009BC2B6 /* LiraTechUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiraTechUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		312280C126799F73009BC2B6 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		313E3BE126672AAC00FC8FB8 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 		313E3BE426672B3400FC8FB8 /* RegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManager.swift; sourceTree = "<group>"; };
 		313E3BE72667321E00FC8FB8 /* MainPageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageManager.swift; sourceTree = "<group>"; };
@@ -61,6 +83,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3122809E26799641009BC2B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		312280AE267999D3009BC2B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AF1EE5752630E17800F4CDDA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		312280A226799641009BC2B6 /* LiraTechTests */ = {
+			isa = PBXGroup;
+			children = (
+				312280C126799F73009BC2B6 /* Tests.swift */,
+				312280A526799641009BC2B6 /* Info.plist */,
+			);
+			path = LiraTechTests;
+			sourceTree = "<group>";
+		};
 		AF1EE56F2630E17800F4CDDA = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +135,7 @@
 				31561E3026644CF200C1817F /* Test_questions+CoreDataProperties.swift */,
 				AFBCAE9E265A5BDC00C866FE /* Model.xcdatamodeld */,
 				AF1EE57A2630E17800F4CDDA /* LiraTech */,
+				312280A226799641009BC2B6 /* LiraTechTests */,
 				AF1EE5792630E17800F4CDDA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				AF1EE5782630E17800F4CDDA /* LiraTech.app */,
+				312280A126799641009BC2B6 /* LiraTechTests.xctest */,
+				312280B1267999D3009BC2B6 /* LiraTechUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +177,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		312280A026799641009BC2B6 /* LiraTechTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 312280AA26799641009BC2B6 /* Build configuration list for PBXNativeTarget "LiraTechTests" */;
+			buildPhases = (
+				3122809D26799641009BC2B6 /* Sources */,
+				3122809E26799641009BC2B6 /* Frameworks */,
+				3122809F26799641009BC2B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				312280A726799641009BC2B6 /* PBXTargetDependency */,
+			);
+			name = LiraTechTests;
+			productName = LiraTechTests;
+			productReference = 312280A126799641009BC2B6 /* LiraTechTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		312280B0267999D3009BC2B6 /* LiraTechUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 312280B8267999D3009BC2B6 /* Build configuration list for PBXNativeTarget "LiraTechUITests" */;
+			buildPhases = (
+				312280AD267999D3009BC2B6 /* Sources */,
+				312280AE267999D3009BC2B6 /* Frameworks */,
+				312280AF267999D3009BC2B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				312280B7267999D3009BC2B6 /* PBXTargetDependency */,
+			);
+			name = LiraTechUITests;
+			productName = LiraTechUITests;
+			productReference = 312280B1267999D3009BC2B6 /* LiraTechUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		AF1EE5772630E17800F4CDDA /* LiraTech */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF1EE5872630E18300F4CDDA /* Build configuration list for PBXNativeTarget "LiraTech" */;
@@ -152,9 +236,17 @@
 		AF1EE5702630E17800F4CDDA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					312280A026799641009BC2B6 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = AF1EE5772630E17800F4CDDA;
+					};
+					312280B0267999D3009BC2B6 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = AF1EE5772630E17800F4CDDA;
+					};
 					AF1EE5772630E17800F4CDDA = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -174,11 +266,27 @@
 			projectRoot = "";
 			targets = (
 				AF1EE5772630E17800F4CDDA /* LiraTech */,
+				312280A026799641009BC2B6 /* LiraTechTests */,
+				312280B0267999D3009BC2B6 /* LiraTechUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3122809F26799641009BC2B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		312280AF267999D3009BC2B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AF1EE5762630E17800F4CDDA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -192,6 +300,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3122809D26799641009BC2B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				312280C226799F73009BC2B6 /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		312280AD267999D3009BC2B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AF1EE5742630E17800F4CDDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -221,7 +344,98 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		312280A726799641009BC2B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF1EE5772630E17800F4CDDA /* LiraTech */;
+			targetProxy = 312280A626799641009BC2B6 /* PBXContainerItemProxy */;
+		};
+		312280B7267999D3009BC2B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF1EE5772630E17800F4CDDA /* LiraTech */;
+			targetProxy = 312280B6267999D3009BC2B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		312280A826799641009BC2B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LiraTechTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = IZ.LiraTechTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiraTech.app/LiraTech";
+			};
+			name = Debug;
+		};
+		312280A926799641009BC2B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LiraTechTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = IZ.LiraTechTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiraTech.app/LiraTech";
+			};
+			name = Release;
+		};
+		312280B9267999D3009BC2B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LiraTechUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = IZ.LiraTechUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LiraTech;
+			};
+			name = Debug;
+		};
+		312280BA267999D3009BC2B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LiraTechUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = IZ.LiraTechUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LiraTech;
+			};
+			name = Release;
+		};
 		AF1EE5852630E18300F4CDDA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -383,6 +597,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		312280AA26799641009BC2B6 /* Build configuration list for PBXNativeTarget "LiraTechTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				312280A826799641009BC2B6 /* Debug */,
+				312280A926799641009BC2B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		312280B8267999D3009BC2B6 /* Build configuration list for PBXNativeTarget "LiraTechUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				312280B9267999D3009BC2B6 /* Debug */,
+				312280BA267999D3009BC2B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AF1EE5732630E17800F4CDDA /* Build configuration list for PBXProject "LiraTech" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

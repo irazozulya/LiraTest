@@ -5,7 +5,6 @@
 //  Created by Ira Zozulya on 02.06.2021.
 //
 
-import GameKit
 import Combine
 
 final class RegisterManager: ObservableObject {

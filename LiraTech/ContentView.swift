@@ -66,14 +66,13 @@ struct ContentView_Previews: PreviewProvider {
 struct BlueButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(minWidth: 0, maxWidth: 300)
+            .frame(minWidth: 0, maxWidth: 300, alignment: .center)
                         .padding(.top, 18)
                         .padding(.bottom, 18)
             .font(.system(size: 18, weight: .bold, design: .default))
             .background(Color(red: 0.421, green: 0.585, blue: 1))
             .foregroundColor(.white)
             .cornerRadius(8.0)
-            
     }
 }
 
@@ -144,7 +143,6 @@ struct LogoSmallOnTheLeft: View{
 
 struct TestButton: View {
     
-    
     var body: some View {
         HStack{
             Text("title")
@@ -205,7 +203,7 @@ struct LoginStudent: View {
     @ObservedObject private var loginManager = LoginManager()
     @State var colorfield = Color.black.opacity(0.7)
     @State var email: String = ""
-    @State var pass: String = ""
+    @State private var pass: String = ""
     @State var showMain: Bool = false
     
     var body: some View {
@@ -236,7 +234,7 @@ struct LoginStudent: View {
                     .background(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color(red: 0.421, green: 0.585, blue: 1), lineWidth: 2))
                     .padding(.bottom, 24)
                 
-                NavigationLink(destination: MainPersonalScreen(user_id: 2),
+                NavigationLink(destination: MainPersonalScreen(),
                     isActive: self.$showMain) {
                     Button(action: {
                         self.showMain =
@@ -278,11 +276,12 @@ struct RegisterStudent: View {
     @State var colorfield = Color.black.opacity(0.7)
     @State var name: String = ""
     @State var email: String = ""
-    @State var pass: String = ""
+    @State private var pass: String = ""
     @State var pass1: String = ""
     @State var showMain: Bool = false
     
     var body: some View {
+        ScrollView {
             VStack {
                 MainLogo()
                 Text("Реєстрація студента")
@@ -319,7 +318,7 @@ struct RegisterStudent: View {
                     .background(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color(red: 0.421, green: 0.585, blue: 1), lineWidth: 2))
                     .padding(.bottom, 24)
                 
-                NavigationLink(destination: MainPersonalScreen(user_id: 2),
+                NavigationLink(destination: MainPersonalScreen(),
                     isActive: self.$showMain) {
                     Button(action: {
                         self.showMain =
@@ -342,17 +341,14 @@ struct RegisterStudent: View {
                     .font(.system(size: 18, weight: .bold, design: .default))
                     .foregroundColor(Color(red: 0.421, green: 0.585, blue: 1))
         }
+        }
+        .tabViewStyle(PageTabViewStyle())
     }
 }
 
 
 struct MainPersonalScreen: View {
     @State var TestName: String = "МКР №1"
-    @ObservedObject private var mainPageManager: MainPageManager
-    
-    init(user_id: Int64) {
-        mainPageManager = MainPageManager()
-    }
     
     var body: some View {
         VStack{
@@ -363,10 +359,12 @@ struct MainPersonalScreen: View {
                     .padding(.trailing, 12)
                 ProfilePhoto()
             }
+
+
                 
             Text("Особистий кабінет студента")
                 .font(.system(size: 20, weight: .medium, design: .default))
-                .padding(30)
+                .padding(.top, 30)
             
             
             Button(action: {}, label: {
@@ -379,8 +377,7 @@ struct MainPersonalScreen: View {
             //тут приклад
             // https://matteomanferdini.com/swiftui/
             HStack{
-                ForEach(mainPageManager.userTests, id: \.self) { userTest in
-                    Text("Тест " + String(mainPageManager.userTests.count))
+                Text(TestName)
                         .font(.system(size: 16, weight: .regular, design: .default))
                         .foregroundColor(Color.black)
                         .frame(maxWidth: 250, alignment: .leading)
@@ -400,7 +397,7 @@ struct MainPersonalScreen: View {
                 .background(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color(red: 0.421, green: 0.585, blue: 1), lineWidth: 2))
                 .cornerRadius(8.0)
                             }
-        }
+            Spacer()
     }
 }
 
@@ -439,7 +436,7 @@ struct CodeToTest: View {
                     
                 })
             .buttonStyle(BlueButton())
-            .padding(.bottom, 400)
+            Spacer()
         }
     }
 }
@@ -449,6 +446,7 @@ struct CodeToTest: View {
 struct EnterConfirmation: View {
 
     var body: some View {
+        ScrollView {
         VStack{
             HStack{
                 LogoSmallOnTheLeft()
@@ -458,6 +456,7 @@ struct EnterConfirmation: View {
                 ProfilePhoto()
             }
             .padding(.bottom, 30)
+            Spacer()
             Text("Ви входите у тест №02010")
                 .font(.system(size: 20, weight: .medium, design: .default))
                 .padding(.bottom, 8)
@@ -468,10 +467,10 @@ struct EnterConfirmation: View {
             VStack{
                 Text("Увага!")
                     .font(.system(size: 20, weight: .bold, design: .default))
-                    .padding(.top, 32)
+                    .padding(.top, 24)
                     .foregroundColor(Color(red: 0.421, green: 0.585, blue: 1))
                     .frame(minWidth: 0, maxWidth: 280, alignment: .leading)
-                Text("Під час написання тестування ведеться відеозйомка. Будуть робитися фотографії людини, яка проходить тестування. Так викладач удостовіриться, що саме його студент проходив тестування. Якщо Ви згодні з умовами, натисніть на кнопку нижче. Вся інформація конфіденціальна, всі фотографії будуть видалені після 2 тижнів з перевірки тесту викладачем.")
+                Text("Під час написання тестування ведеться відеозйомка. Будуть робитися фотографії людини, яка проходить тестування. Так викладач удостовіриться, що саме його студент проходив тестування.  Вся інформація конфіденціальна, всі фотографії будуть видалені після 2 тижнів з перевірки тесту викладачем.")
                     .font(.system(size: 16, weight: .regular, design: .default))
                     .frame(width: 280, height: 250, alignment: .leading)
                 Button(action: {}, label: {
@@ -489,20 +488,28 @@ struct EnterConfirmation: View {
             .padding(.bottom, 16)
             
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                Text("Я не згоден, вийти з тесту")
+                NavigationLink(destination: CodeToTest()){
+                    Text("Я не згоден, вийти з тесту")
+                    
+                }
             })
             .frame(minWidth: 0, maxWidth: 300, alignment: .center)
-            .padding(.bottom, 96)
                 .font(.system(size: 18, weight: .bold, design: .default))
                 .foregroundColor(Color(red: 0.421, green: 0.585, blue: 1))
+        }
         }
     }
 }
 
 struct QuestionView: View {
-    @State var title: String = "Тест № 1"
     @State var timeRemaining = 25*60
     @State var selected = ""
+    //number of question
+    @State var i : Int = 0
+    @ObservedObject private var mainPageManager = MainPageManager()
+    
+    //var for the score
+    @State var score = 0
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
 
@@ -543,16 +550,52 @@ struct QuestionView: View {
             .frame(minWidth: 0, maxWidth: 300)
         }
         VStack(alignment: .leading) {
-            Text("1. Питання")
+            if(self.i < mainPageManager.Quiz1.count){
+                Text(mainPageManager.Quiz1[self.i].text!)
                 .font(.system(size: 16, weight: .regular, design: .default))
-            Button(action: {}, label: {
-                Text("a) answer")
-            })
+                
+                Button(action:{
+                    self.buttonAction(n: 0)
+                },label: {
+                    Text(mainPageManager.Quiz1[self.i].answer[0])
+                })
             .buttonStyle(AnswerButton())
-            
+                Button(action:{
+                    self.buttonAction(n: 1)
+                },label: {
+                    Text(mainPageManager.Quiz1[self.i].answer[1])
+                })
+            .buttonStyle(AnswerButton())
+                
+                Button(action:{
+                    self.buttonAction(n: 2)
+                },label: {
+                    Text(mainPageManager.Quiz1[self.i].answer[2])
+                })
+            .buttonStyle(AnswerButton())
+                
+                Button(action:{
+                    self.buttonAction(n: 3)
+                },label: {
+                    Text(mainPageManager.Quiz1[self.i].answer[3])
+                })
+            .buttonStyle(AnswerButton())
         }
+            else{
+                FinalView(score : (self.score * 100) / mainPageManager.Quiz1.count)
+            }
+        }
+        .padding(.bottom, 100)
         .frame(maxWidth: 300, alignment: .leading)
-
+        
+    }
+    
+    func buttonAction( n : Int){
+        if(mainPageManager.Quiz1[self.i].correct == n){
+            self.score = self.score + 1
+        }
+        //GO TO NEXT QUESTION
+        self.i = self.i + 1
     }
     
     func timeString(time: Int) -> String {
@@ -560,4 +603,29 @@ struct QuestionView: View {
             let seconds = Int(time) % 60
             return String(format:"%02i:%02i", minutes, seconds)
         }
+}
+
+func SaveScore(quiz : String , score : Int){
+    UserDefaults.standard.set(score, forKey: quiz)
+}
+
+struct FinalView : View {
+    
+    var score : Int
+    var body: some View {
+        
+        VStack{
+            
+            Text("Ваш результат : \(score) % ")
+            .onAppear(){
+                SaveScore(quiz: "Тест №1", score: self.score)
+            }
+            Button(action: {}, label: {
+                    NavigationLink(destination: MainPersonalScreen()){
+                        Text("Повернутись на головну")
+                    }})
+                .buttonStyle(BlueButton())
+        }
+    }
+    
 }
