@@ -5,7 +5,6 @@
 //  Created by Ira Zozulya on 31.05.2021.
 //
 
-import GameKit
 import Combine
 
 final class LoginManager: ObservableObject {
